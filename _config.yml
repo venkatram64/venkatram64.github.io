@@ -1,27 +1,29 @@
-title: My GitHub Blog
-description: A simple blog for GitHub Pages
-email: venkat.veerareddy@gmail.com
-baseurl: ""
-url: "https://venkatram64.github.io" # Your GitHub Pages URL
-
-theme: minima
+# Site settings
+title: My Java Blog
+email: your.email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Java articles and tutorials
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://venkatram64.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  venkatram64
 
 # Build settings
 markdown: kramdown
+theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor
-
-# Add your navigation links here
-github_username:  venkatram64
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .idea
+  - .vscode
 
 # Defaults
 defaults:
@@ -30,8 +32,6 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      published: true
-      sitemap: true
   - scope:
       path: ""
       type: "pages"
@@ -50,5 +50,3 @@ collections:
     sort_by: date
     sort_direction: descending
     future: true  # Show future-dated posts
-
-
