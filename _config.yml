@@ -14,17 +14,8 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Permalinks
-permalink: /:title/
-
-# Exclude from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-  - .idea
-  - .vscode
+# Permalink structure
+permalink: pretty  # This will add trailing slashes to URLs
 
 # Defaults
 defaults:
