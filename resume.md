@@ -2,6 +2,9 @@
 layout: default
 title: Resume
 permalink: /resume/
+no_container: true
 ---
 
-{% include resume.html %}
+<div class="resume-page">
+    {% include resume.html %}
+</div>
