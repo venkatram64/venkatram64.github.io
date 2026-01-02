@@ -8,7 +8,7 @@ author: Venkatram
 
 Java 8, released in March 2014, marked a revolutionary shift in the Java programming language. It introduced powerful features that transformed how developers write Java code, making it more expressive, concise, and functional. In this detailed guide, we'll explore each major feature with practical examples.
 
-## 🚀 Why Java 8 Was a Game-Changer
+##  Why Java 8 Was a Game-Changer
 
 Before Java 8, Java was often criticized for being too verbose and lacking modern programming paradigms. Java 8 addressed these concerns by introducing:
 
@@ -194,7 +194,7 @@ public class OptionalExamples {
 }
 ```
 
-## 🎯 Best Practices and Tips
+##  Best Practices and Tips
 
 1. **Use Streams Wisely**
    - Use streams for complex data processing
@@ -214,13 +214,13 @@ public class OptionalExamples {
    - Always check if a value is present before calling `get()`
    - Use `orElse()`, `orElseGet()`, or `orElseThrow()` to handle empty cases
 
-## 📊 Performance Considerations
+##  Performance Considerations
 
 - **Parallel Streams**: Use for large datasets (>10,000 elements)
 - **Primitive Streams**: Use `IntStream`, `LongStream`, `DoubleStream` when possible
 - **Method References**: Can be slightly faster than lambdas in some cases
 
-## 🚀 Conclusion
+##  Conclusion
 
 Java 8 revolutionized Java development by introducing:
 - Functional programming with lambdas

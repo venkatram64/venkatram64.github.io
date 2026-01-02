@@ -362,3 +362,46 @@ a:hover {
     padding-top: 0.5rem;
     border-top: 1px dashed #dee2e6;
 }
+
+
+/* Code Block with Copy Button */
+.code-block {
+    position: relative;
+    margin: 1.5rem 0;
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 1.25rem;
+    border-radius: 4px;
+    background: #f8f9fa;
+    overflow-x: auto;
+}
+
+.copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.code-block:hover .copy-button {
+    opacity: 1;
+}
+
+.copy-button:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.copy-button.copied {
+    background: #198754;
+    color: white;
+    border-color: #198754;
+}
