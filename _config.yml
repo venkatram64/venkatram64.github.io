@@ -1,11 +1,11 @@
 # Site settings
-title: My Java Blog
-email: your.email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Java articles and tutorials
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://venkatram64.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  venkatram64
+title: Venkatram's Blog
+email: venkat.veerareddy@gmail.com
+description: >-
+  A blog about software development, Java, and cloud technologies
+baseurl: ""
+url: "https://venkatram64.github.io"
+github_username: venkatram64
 
 # Build settings
 markdown: kramdown
@@ -14,9 +14,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
+# Exclude from processing
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -32,15 +30,13 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      published: true
+      sitemap: true
   - scope:
       path: ""
       type: "pages"
     values:
       layout: "default"
-
-# Add this to your _config.yml
-head_scripts:
-  - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 
 # Collections
 collections:
@@ -50,3 +46,7 @@ collections:
     sort_by: date
     sort_direction: descending
     future: true  # Show future-dated posts
+
+# Add Bootstrap Icons
+head_scripts:
+  - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
