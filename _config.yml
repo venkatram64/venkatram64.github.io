@@ -43,3 +43,19 @@ collections:
     permalink: /:year/:month/:title/
     sort_by: date
     sort_direction: descending
+    future: true  # Show future-dated posts
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      published: true
+      sitemap: true
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
