@@ -1,0 +1,45 @@
+title: My GitHub Blog
+description: A simple blog for GitHub Pages
+email: venkat.veerareddy@gmail.com
+baseurl: ""
+url: "https://venkatram64.github.io" # Your GitHub Pages URL
+
+theme: minima
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor
+
+# Add your navigation links here
+github_username:  venkatram64
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:year/:month/:title/
+    sort_by: date
+    sort_direction: descending
