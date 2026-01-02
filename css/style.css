@@ -17,8 +17,113 @@ body {
 /* Content Wrapper */
 .content-wrapper {
     flex: 1 0 auto;
-    width: 100%;
     padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Post Content */
+.post-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.post-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.post-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.post-title {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.post-meta {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.post-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.post-body h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+    color: #2c3e50;
+    font-size: 1.8rem;
+}
+
+.post-body h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.post-body p {
+    margin-bottom: 1.5rem;
+}
+
+.post-body ul, .post-body ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.post-body li {
+    margin-bottom: 0.5rem;
+}
+
+.post-body pre, 
+.post-body code {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.post-body pre {
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.post-body code {
+    padding: 0.2em 0.4em;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .post-content {
+        padding: 0 15px;
+    }
+    
+    .post-container {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    .post-title {
+        font-size: 1.8rem;
+    }
+    
+    .post-body {
+        font-size: 1rem;
+    }
 }
 
 /* Resume Page Styles */
