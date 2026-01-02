@@ -3,7 +3,7 @@ title: Venkatram's Blog
 email: venkat.veerareddy@gmail.com
 description: >-
   A blog about software development, Java, and cloud technologies
-baseurl: ""
+baseurl: ""  # Keep this empty for GitHub Pages
 url: "https://venkatram64.github.io"
 github_username: venkatram64
 
@@ -13,6 +13,9 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+# Permalinks
+permalink: /:title/
 
 # Exclude from processing
 exclude:
@@ -37,6 +40,8 @@ defaults:
       type: "pages"
     values:
       layout: "default"
+      published: true
+      sitemap: true
 
 # Collections
 collections:
@@ -45,8 +50,4 @@ collections:
     permalink: /:year/:month/:title/
     sort_by: date
     sort_direction: descending
-    future: true  # Show future-dated posts
-
-# Add Bootstrap Icons
-head_scripts:
-  - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    future: true

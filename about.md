@@ -3,7 +3,6 @@ layout: default
 title: About
 permalink: /about/
 ---
-
 # About Me
 
-Senior Software Developer with 25+ years of comprehensive experience in full-stack development, specializing in Java/Spring Boot microservices, ReactJS, and cloud-native applications.
+Senior Software Developer with 25+ years of comprehensive experience in full-stack development...
