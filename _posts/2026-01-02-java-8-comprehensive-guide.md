@@ -3,7 +3,7 @@ layout: post
 title: "Java 8: A Comprehensive Guide to Modern Java Features"
 date: 2026-01-02 18:00:00 +0530
 categories: java programming
-author: Venkat Ram
+author: Venkatram
 ---
 
 Java 8, released in March 2014, marked a revolutionary shift in the Java programming language. It introduced powerful features that transformed how developers write Java code, making it more expressive, concise, and functional. In this detailed guide, we'll explore each major feature with practical examples.
