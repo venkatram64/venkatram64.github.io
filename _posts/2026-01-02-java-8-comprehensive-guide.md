@@ -194,7 +194,189 @@ public class OptionalExamples {
 }
 ```
 
-##  Best Practices and Tips
+## 7. Method References
+
+Method references provide a way to refer to methods without executing them, making code more readable.
+
+```java
+import java.util.*;
+import java.util.function.*;
+
+public class MethodReferenceExamples {
+    
+    public static void main(String[] args) {
+        List<String> names = Arrays.asList("John", "Alice", "Bob", "Diana");
+        
+        // Four types of method references:
+        
+        // 1. Reference to static method
+        // ClassName::staticMethodName
+        Function<String, Integer> parser = Integer::parseInt;
+        System.out.println(parser.apply("123"));
+        
+        // 2. Reference to instance method of particular object
+        // object::instanceMethodName
+        String prefix = "Hello, ";
+        Function<String, String> greeter = prefix::concat;
+        System.out.println(greeter.apply("World"));
+        
+        // 3. Reference to instance method of arbitrary object of particular type
+        // ClassName::instanceMethodName
+        List<String> upperNames = names.stream()
+            .map(String::toUpperCase)
+            .collect(Collectors.toList());
+        System.out.println(upperNames);
+        
+        // 4. Reference to constructor
+        // ClassName::new
+        Supplier<List<String>> listSupplier = ArrayList::new;
+        List<String> newList = listSupplier.get();
+        
+        // More examples
+        names.forEach(System.out::println);
+        
+        // Sorting with method reference
+        names.sort(String::compareToIgnoreCase);
+        System.out.println("Sorted: " + names);
+        
+        // Constructor reference with parameters
+        Function<String, Integer> stringToInteger = Integer::new;
+        System.out.println(stringToInteger.apply("456"));
+        
+        // BiFunction example
+        BiFunction<String, String, String> concat = String::concat;
+        System.out.println(concat.apply("Hello ", "World"));
+    }
+}
+```
+
+## 8. CompletableFuture for Asynchronous Programming
+
+Java 8 enhanced asynchronous programming with CompletableFuture.
+
+```java
+import java.util.concurrent.*;
+import java.util.function.*;
+
+public class CompletableFutureExamples {
+    
+    public static void main(String[] args) throws Exception {
+        // Simple asynchronous computation
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new IllegalStateException(e);
+            }
+            return "Result of the asynchronous computation";
+        });
+        
+        // Block and get the result
+        System.out.println(future.get());
+        
+        // Chaining computations
+        CompletableFuture<String> welcome = CompletableFuture.supplyAsync(() -> {
+            return "Hello";
+        }).thenApply(s -> s + " World")
+          .thenApply(String::toUpperCase);
+        
+        System.out.println(welcome.get()); // HELLO WORLD
+        
+        // Combining two independent futures
+        CompletableFuture<String> cf1 = CompletableFuture.supplyAsync(() -> "Hello");
+        CompletableFuture<String> cf2 = CompletableFuture.supplyAsync(() -> "World");
+        
+        CompletableFuture<String> combined = cf1.thenCombine(
+            cf2, (s1, s2) -> s1 + " " + s2
+        );
+        
+        System.out.println(combined.get()); // Hello World
+        
+        // Handling exceptions
+        CompletableFuture<String> exceptionHandling = CompletableFuture
+            .supplyAsync(() -> {
+                if (true) throw new RuntimeException("Error occurred!");
+                return "Success";
+            })
+            .exceptionally(ex -> "Error: " + ex.getMessage());
+        
+        System.out.println(exceptionHandling.get());
+    }
+}
+```
+
+## 9. Parallel Streams
+
+Java 8 makes parallel processing incredibly simple with parallel streams.
+
+```java
+import java.util.*;
+import java.util.stream.*;
+
+public class ParallelStreamExamples {
+    
+    public static void main(String[] args) {
+        List<Integer> numbers = IntStream.rangeClosed(1, 10000000)
+            .boxed()
+            .collect(Collectors.toList());
+        
+        // Sequential stream
+        long startTime = System.currentTimeMillis();
+        long sequentialSum = numbers.stream()
+            .mapToLong(Integer::longValue)
+            .sum();
+        long sequentialTime = System.currentTimeMillis() - startTime;
+        
+        System.out.println("Sequential sum: " + sequentialSum);
+        System.out.println("Sequential time: " + sequentialTime + "ms");
+        
+        // Parallel stream
+        startTime = System.currentTimeMillis();
+        long parallelSum = numbers.parallelStream()
+            .mapToLong(Integer::longValue)
+            .sum();
+        long parallelTime = System.currentTimeMillis() - startTime;
+        
+        System.out.println("Parallel sum: " + parallelSum);
+        System.out.println("Parallel time: " + parallelTime + "ms");
+        System.out.println("Speedup: " + (sequentialTime / (double)parallelTime) + "x");
+    }
+}
+```
+
+## 10. Base64 Encoding/Decoding
+
+Java 8 finally added built-in Base64 support.
+
+```java
+import java.util.Base64;
+import java.util.Base64.*;
+import java.nio.charset.StandardCharsets;
+
+public class Base64Examples {
+    
+    public static void main(String[] args) {
+        String original = "Java 8 is awesome! 🚀";
+        
+        // Basic encoding/decoding
+        String encoded = Base64.getEncoder().encodeToString(
+            original.getBytes(StandardCharsets.UTF_8)
+        );
+        
+        System.out.println("Original: " + original);
+        System.out.println("Encoded: " + encoded);
+        
+        String decoded = new String(
+            Base64.getDecoder().decode(encoded),
+            StandardCharsets.UTF_8
+        );
+        
+        System.out.println("Decoded: " + decoded);
+    }
+}
+```
+
+## Best Practices and Tips
 
 1. **Use Streams Wisely**
    - Use streams for complex data processing
